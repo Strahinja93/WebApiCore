@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApiCore.Services.CharacterService;
 
 namespace WebApiCore
 {
@@ -28,6 +29,8 @@ namespace WebApiCore
         {
 
             services.AddControllers();
+            services.AddScoped<ICharacterService, CharacterService>();
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApiCore", Version = "v1" });
